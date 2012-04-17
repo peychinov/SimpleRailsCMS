@@ -1,6 +1,14 @@
 SimpleRailsCMS::Application.routes.draw do
-  resources :pages
+  resources :pages do
+    member do
+      put 'higher'
+      put 'lower'
+    end
+  end
 
+  match ":id" => 'pages#show'
+  match ":id.html" => 'pages#show'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

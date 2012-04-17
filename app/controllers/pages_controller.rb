@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.find(:all, :conditions => ['parent_id IS NULL'], :order => :position)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +13,16 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Page.find(params[:id])
+    begin
+      @page = Page.find_by_name(params[:id]) #GET /pages/name
+      @page ||= Page.find(params[:id]) #GET /pages/id
+      @pages = Page.find(:all, :order => :position)
+    rescue       
+      redirect_to "/404.html" 
+    else
 
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @page }
@@ -80,4 +88,30 @@ class PagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # PUT /pages/1;higher
+  def higher
+    page = Page.find(params[:id])
+    unless page.nil?
+      if page.first?
+        page.move_to_bottom
+      else
+        page.move_higher
+      end
+    end
+    redirect_to pages_url
+  end
+
+  # PUT /pages/1;lower
+  def lower
+    page = Page.find(params[:id])
+    unless page.nil?
+      if page.last?
+        page.move_to_top
+      else
+        page.move_lower
+      end
+    end
+    redirect_to pages_url
+  end 
 end
