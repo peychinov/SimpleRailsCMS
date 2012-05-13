@@ -137,7 +137,7 @@ DEPENDENCIES
   acts_as_list
   acts_as_tree (~> 0.2.0)
   coffee-rails (~> 3.2.1)
-  devise (= 2.0)
+  devise
   heroku
   jquery-rails
   pg

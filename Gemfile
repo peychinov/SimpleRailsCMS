@@ -28,7 +28,7 @@ end
 gem 'jquery-rails'
 gem 'acts_as_tree', '~> 0.2.0'
 gem 'acts_as_list'
-gem 'devise', '2.0'
+gem 'devise'
 gem 'heroku'
 
 # To use ActiveModel has_secure_password
