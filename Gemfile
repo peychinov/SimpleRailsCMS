@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-#gem 'rake', '~> 0.8.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -31,6 +30,7 @@ gem 'acts_as_tree', '~> 0.2.0'
 gem 'acts_as_list'
 gem 'devise'
 gem 'heroku'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
