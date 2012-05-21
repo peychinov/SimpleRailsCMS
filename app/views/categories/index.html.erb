@@ -12,7 +12,7 @@
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.title %></td>
-    <td><%= category.parent_id %></td>
+    <td><%= category.parent_category.present? ? category.parent_category.title : '-' %></td>
     <td><%= link_to 'Show', category %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
     <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
