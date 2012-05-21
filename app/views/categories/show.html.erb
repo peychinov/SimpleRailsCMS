@@ -7,7 +7,11 @@
 
 <p>
   <b>Parent:</b>
-  <%= @category.parent_id %>
+  <% if @category.parent_category.present? %>
+  	<%= @category.parent_category.title %>
+  <% else %>
+  	<%= 'None' %>
+  <% end %>
 </p>
 
 <p>
