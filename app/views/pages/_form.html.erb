@@ -32,6 +32,10 @@
     <%= select("page", "parent_id", Page.find(:all).collect {|p| [ p.name, p.id ] }, { :include_blank => true } ) %>
   </div>
   <div class="field">
+    <%= f.label :category_id %><br />
+    <%= select("page", "category_id", Category.find(:all).collect {|c| [ c.title, c.id ] }, { :include_blank => true } ) %>
+  </div>
+  <div class="field">
     <%= f.label :position %><br />
     <%= f.number_field :position %>
   </div>
