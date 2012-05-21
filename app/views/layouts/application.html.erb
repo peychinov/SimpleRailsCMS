@@ -9,7 +9,7 @@
 <body style="background-color:#ddd">
   <div style="min-height:600px; margin:0 20px; background-color:white">
     <div style="height:80px; background-color:#88A; text-align:center; padding:1em">
-      <h1>Welcome to My Site</h1>
+      <h1>Simple CMS in Rails</h1>
     </div>
     <div>
       <div style="float:left; background-color:#888">
@@ -19,13 +19,19 @@
         <p style="color: green"><%= flash[:notice] %></p>
 
         <div id="user_nav">  
-          <% if admin_signed_in? %>  
-            Signed in as <%= current_admin.email %>. Not you?  
-            <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>  
-          <% else %>  
-            <%= link_to "Sign up", new_admin_registration_path %> or  
-            <%= link_to "Sign in", new_admin_session_path %>  
-          <% end %>  
+          <div>
+            <%= link_to "Pages", pages_url %>
+            <%= link_to "Categories", categories_url %>
+          </div>
+          <div>
+            <% if admin_signed_in? %>  
+              Signed in as <%= current_admin.email %>. Not you?  
+              <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>  
+            <% else %>  
+              <%= link_to "Sign up", new_admin_registration_path %> or  
+              <%= link_to "Sign in", new_admin_session_path %>  
+            <% end %>  
+          </div>
         </div>  
 
         <!-- test device msgs -->
