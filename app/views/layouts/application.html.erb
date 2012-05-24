@@ -1,46 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title><%= (@page.nil? || @page.title.nil?) ? "Simple Rails CMS" : @page.title %> </title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body style="background-color:#ddd">
-  <div style="min-height:600px; margin:0 20px; background-color:white">
-    <div style="height:80px; background-color:#88A; text-align:center; padding:1em">
-      <h1>Simple CMS in Rails</h1>
-    </div>
-    <div>
-      <div style="float:left; background-color:#888">
-        <%= yield :sidemenu %>
-      </div>
-      <div style="margin-left:150px">
-        <p style="color: green"><%= flash[:notice] %></p>
-
-        <div id="user_nav">  
-          <div>
-            <%= link_to "Pages", pages_url %>
-            <%= link_to "Categories", categories_url %>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Myapp" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+        </div>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
           </div>
-          <div>
-            <% if admin_signed_in? %>  
-              Signed in as <%= current_admin.email %>. Not you?  
-              <%= link_to "Sign out", destroy_admin_session_path, :method => :delete %>  
-            <% else %>  
-              <%= link_to "Sign up", new_admin_registration_path %> or  
-              <%= link_to "Sign in", new_admin_session_path %>  
-            <% end %>  
-          </div>
-        </div>  
-
-        <!-- test device msgs -->
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-
-        <%= yield :layout %>
-      </div>
-    </div>
-  </div>
-</body>
+          <footer>
+          </footer>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+  </body>
 </html>
+
+<!-- 
+<title><%#= (@page.nil? || @page.title.nil?) ? "Simple Rails CMS" : @page.title %> </title>
+
+<div style="float:left; background-color:#888">
+  <%#= yield :sidemenu %>
+</div>
+
+ -->
