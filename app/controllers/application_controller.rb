@@ -6,8 +6,10 @@ class ApplicationController < ActionController::Base
   	@is_in_editor = false
   end
 
-  def track_last_admin_url
-  	@last_admin_url = request.url
-  	@is_in_editor = true
-  end
+  private
+
+	  # Overwriting the sign_out redirect path method
+	  def after_sign_in_path_for(resource_or_scope)
+	    "/admin/pages"
+	  end
 end

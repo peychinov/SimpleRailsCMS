@@ -1,5 +1,4 @@
-class PagesController < ApplicationController
-  before_filter :authenticate_admin!, :except => :show
+class PagesController < PublicController
 
   # GET /pages
   # GET /pages.json

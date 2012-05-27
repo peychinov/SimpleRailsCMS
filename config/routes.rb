@@ -10,6 +10,10 @@ SimpleRailsCMS::Application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :pages, :categories
+  end
+
   match ":id" => 'pages#show'
   match ":id.html" => 'pages#show'
   

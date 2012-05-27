@@ -4,9 +4,9 @@
       <div id="editor_switch">
         <span style="border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; ">
           <% if @is_in_editor %>
-            <%= link_to "Switch to your website", @last_public_url, :style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; " %>
+            <%= link_to "Switch to your website", session["last_public_url"], :style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; " %>
           <% else %>
-            <%= link_to "Switch to your website editor", @last_admin_url, :style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; " %>
+            <%= link_to "Switch to your website editor", session["last_admin_url"], :style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; " %>
           <% end %>
         </span>
       </div>
