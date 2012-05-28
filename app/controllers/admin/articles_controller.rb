@@ -1,4 +1,4 @@
-class ArticlesController < PublicController
+class Admin::ArticlesController < Admin::AdminController
   
   # GET /articles
   # GET /articles.json

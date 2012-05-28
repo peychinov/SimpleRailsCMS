@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :parent_id %><br />
-    <%= select("category", "parent_id", Category.find(:all).select{|c| c.id != @category.id}.collect {|c| [ c.title, c.id ] }, { :include_blank => true } ) %>
+    <%= select("category", "parent_id", Category.all.select{|c| c.id != @category.id}.collect {|c| [ c.title, c.id ] }, { :include_blank => true } ) %>
   </div>
   <div class="actions">
     <%= f.submit %>
