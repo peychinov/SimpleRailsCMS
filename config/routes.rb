@@ -1,4 +1,6 @@
 SimpleRailsCMS::Application.routes.draw do
+  resources :articles
+
   resources :categories
 
   devise_for :admins
