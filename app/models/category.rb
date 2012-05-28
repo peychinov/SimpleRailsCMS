@@ -1,7 +1,6 @@
 class Category < ActiveRecord::Base
   attr_accessible :parent_id, :title
 
-  has_many :pages
   has_many :articles  
   has_many :child_categories, :class_name => "Category"
   

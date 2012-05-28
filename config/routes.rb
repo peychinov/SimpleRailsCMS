@@ -1,23 +1,12 @@
 SimpleRailsCMS::Application.routes.draw do
   resources :articles
-
   resources :categories
 
   devise_for :admins
 
-  resources :pages do
-    member do
-      put 'higher'
-      put 'lower'
-    end
-  end
-
   namespace :admin do
-    resources :pages, :categories, :articles
+    resources :categories, :articles
   end
-
-  match ":id" => 'pages#show'
-  match ":id.html" => 'pages#show'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

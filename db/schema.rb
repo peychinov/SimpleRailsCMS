@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528081543) do
+ActiveRecord::Schema.define(:version => 20120528194854) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -46,18 +46,6 @@ ActiveRecord::Schema.define(:version => 20120528081543) do
     t.integer  "parent_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "pages", :force => true do |t|
-    t.string   "name"
-    t.string   "title"
-    t.text     "body"
-    t.date     "updated_on"
-    t.integer  "parent_id"
-    t.integer  "position"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "category_id"
   end
 
 end

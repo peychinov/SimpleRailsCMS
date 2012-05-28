@@ -15,9 +15,9 @@
 </p>
 
 <p>
-  <b>Pages:</b>
-  <% @category.pages.each do |page| %>
-   	<%= link_to page.title, page %>
+  <b>Articles:</b>
+  <% @category.articles.each do |article| %>
+   	<%= link_to article.title, article %>
   <% end %> 
 </p>
 
