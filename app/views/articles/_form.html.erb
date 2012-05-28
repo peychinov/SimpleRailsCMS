@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br />
-    <%= select("article", "category_id", Category.find(:all).collect {|c| [ c.title, c.id ] }, { :include_blank => true } ) %>
+    <%= select("article", "category_id", Category.all.collect {|c| [ c.title, c.id ] }, { :include_blank => true } ) %>
   </div>
   <div class="actions">
     <%= f.submit %>
