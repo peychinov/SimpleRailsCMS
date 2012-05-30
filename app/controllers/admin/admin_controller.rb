@@ -1,4 +1,6 @@
 class Admin::AdminController < ApplicationController
+	layout "admin"
+	
 	before_filter :authenticate_admin!, 
 								:track_last_admin_url, :set_is_in_editor
 
