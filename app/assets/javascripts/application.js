@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require wymeditor/wymeditor/jquery.wymeditor.min 
+//= require articles
 //= require_tree .
