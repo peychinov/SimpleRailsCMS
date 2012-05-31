@@ -14,7 +14,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.title %></td>
-        <td><%= category.parent_category.present? ? category.parent_category.title : '-' %></td>
+        <td><%= category.parent_category.present? ? (link_to category.parent_category.title, category_path(category.parent_category)) : 'None' %></td>
         <td><%= link_to 'Show', admin_category_path(category) %></td>
         <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
         <td><%= link_to 'Delete', admin_category_path(category), confirm: 'Are you sure?', method: :delete %></td>
