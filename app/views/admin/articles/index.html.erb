@@ -13,8 +13,8 @@
 <% @articles.each do |article| %>
   <tr>
     <td><%= article.title %></td>
-    <td><%= article.content %></td>
-    <td><%= article.category_id %></td>
+    <td><%= raw(article.content) %></td>
+    <td><%= link_to article.category.title, admin_category_path(article.category) %></td>
     <td><%= link_to 'Show', admin_article_path(article) %></td>
     <td><%= link_to 'Edit', edit_admin_article_path(article) %></td>
     <td><%= link_to 'Destroy', admin_article_path(article), confirm: 'Are you sure?', method: :delete %></td>

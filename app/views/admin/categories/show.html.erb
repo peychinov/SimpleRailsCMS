@@ -17,7 +17,7 @@
 <p>
   <b>Articles:</b>
   <% @category.articles.each do |article| %>
-   	<%= link_to article.title, article %>
+   	<%= link_to article.title, admin_article_path(article) %>
   <% end %> 
 </p>
 

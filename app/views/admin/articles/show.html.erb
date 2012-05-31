@@ -7,12 +7,12 @@
 
 <p>
   <b>Content:</b>
-  <%= @article.content %>
+  <%= raw(@article.content) %>
 </p>
 
 <p>
   <b>Category:</b>
-  <%= @article.category_id %>
+  <%= link_to @article.category.title, admin_category_path(@article.category) %>
 </p>
 
 
