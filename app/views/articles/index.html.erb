@@ -1,6 +1,6 @@
 <h1>Listing articles</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Content</th>
@@ -10,7 +10,7 @@
 <% @articles.each do |article| %>
   <tr>
     <td><%= article.title %></td>
-    <td><%= raw(article.content) %></td>
+    <td><%= raw(article.content[0...100] + '...') %></td>
     <td><%= link_to article.category.title, category_path(article.category) %></td>
   </tr>
 <% end %>
