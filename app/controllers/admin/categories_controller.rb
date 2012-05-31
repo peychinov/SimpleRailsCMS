@@ -77,7 +77,7 @@ class Admin::CategoriesController < Admin::AdminController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to admin_categories_url }
       format.json { head :no_content }
     end
   end
