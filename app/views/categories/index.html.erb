@@ -8,8 +8,8 @@
 
 <% @categories.each do |category| %>
   <tr>
-    <td><%= category.title %></td>
-    <td><%= category.parent_category.present? ? (link_to category.parent_category.title, category_path(category.parent_category)) : '-' %></td>
+    <td><%= link_to category.title, category %></td>
+    <td><%= category.parent_category.present? ? (link_to category.parent_category.title, category_path(category.parent_category)) : 'None' %></td>
   </tr>
 <% end %>
 </table>

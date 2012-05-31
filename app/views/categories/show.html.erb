@@ -8,9 +8,9 @@
 <p>
   <b>Parent:</b>
   <% if @category.parent_category.present? %>
-  	<%= @category.parent_category.title %>
+  	<%= link_to @category.parent_category.title, @category.parent_category %>
   <% else %>
-  	<%= '-' %>
+  	<%= 'None' %>
   <% end %>
 </p>
 
@@ -21,5 +21,4 @@
   <% end %> 
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
