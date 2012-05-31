@@ -16,6 +16,9 @@ SimpleRailsCMS::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
+  
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w( default/skin.css  )
 
   # Generate digests for assets URLs
   config.assets.digest = true

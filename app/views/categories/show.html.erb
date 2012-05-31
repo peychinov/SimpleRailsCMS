@@ -23,7 +23,7 @@
     <div class="well" style="padding: 10px;">
       <h4><%= link_to article.title, article %></h4>
       <div class="well" style="padding: 10px; margin-bottom: 0px; background-color: #d5d5d5">
-        <%= raw(article.content[0..150]) %>
+        <%= raw(article.content) %>
       </div>
     </div>
   <% else %>
