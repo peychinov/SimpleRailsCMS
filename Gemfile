@@ -12,6 +12,8 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
+  gem 'guard-coffeescript'
+  gem 'rb-inotify', '~> 0.9'
 end
 
 # Gems used only for assets and not required
