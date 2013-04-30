@@ -35,6 +35,7 @@ gem 'acts_as_list'
 gem 'devise'
 gem 'heroku'
 gem "friendly_id", "~> 4.0.1"
+gem 'html2haml'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
