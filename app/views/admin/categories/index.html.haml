@@ -1,0 +1,19 @@
+%h1 Listing categories
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th Parent
+      %th
+      %th
+      %th
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.title
+        %td= category.parent_category.present? ? (link_to category.parent_category.title, category_path(category.parent_category)) : 'None'
+        %td= link_to 'Show', admin_category_path(category)
+        %td= link_to 'Edit', edit_admin_category_path(category)
+        %td= link_to 'Delete', admin_category_path(category), confirm: 'Are you sure?', method: :delete
+%br/
+= link_to 'New Category', new_admin_category_path

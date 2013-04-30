@@ -1,0 +1,11 @@
+%h1 Listing categories
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th Parent
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= link_to category.title, category
+        %td= category.parent_category.present? ? (link_to category.parent_category.title, category_path(category.parent_category)) : 'None'

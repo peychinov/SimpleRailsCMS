@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Title:
+  = @article.title
+%p
+  %b Content:
+  = raw(@article.content)
+%p
+  %b Category:
+  = link_to @article.category.title, admin_category_path(@article.category)
+= link_to 'Edit', edit_admin_article_path(@article)
+|
+\#{link_to 'Back', admin_articles_path}

@@ -1,0 +1,13 @@
+- if admin_signed_in?
+  #site_bar
+    #site_bar_content.clearfix
+      #editor_switch
+        %span{:style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; "}
+          - if @is_in_editor
+            = link_to "Switch to your website", session["last_public_url"], :style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; "
+          - else
+            = link_to "Switch to your website editor", session["last_admin_url"], :style => "border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; "
+      #site_bar_branding
+        %span#site_bar_company_name
+          Simple Rails CMS
+        = link_to('Logout', destroy_admin_session_path, :method=>'delete')

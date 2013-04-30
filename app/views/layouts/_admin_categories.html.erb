@@ -1,8 +1,0 @@
-<ul>
-	<% admin_categories.each do |category| %>
-  	<li><%= link_to category.title, admin_category_path(category) %></li>
-	  <% if category.child_categories.count > 0 %>
-		  <%= render :partial => 'layouts/admin_categories', :object => category.child_categories %>
-		<% end %>
-	<% end %>
-</ul>
