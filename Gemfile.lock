@@ -75,6 +75,11 @@ GEM
       guard (>= 1.1.0)
     haml (4.0.2)
       tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     heroku (2.25.0)
       launchy (>= 0.3.2)
       netrc (~> 0.7.1)
@@ -192,6 +197,8 @@ DEPENDENCIES
   devise
   friendly_id (~> 4.0.1)
   guard-coffeescript
+  haml
+  haml-rails
   heroku
   html2haml
   jquery-rails
