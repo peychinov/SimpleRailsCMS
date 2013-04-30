@@ -14,7 +14,7 @@
         %td= article.title
         %td= raw(article.content[0...100] + '...')
         %td= link_to article.category.title, admin_category_path(article.category)
-        %td= link_to 'Show', admin_article_path(article)
+        %td= link_to 'View', article_path(article), title: 'View this page live (opens in a new window)', target: '_blank'
         %td= link_to 'Edit', edit_admin_article_path(article)
         %td= link_to 'Delete', admin_article_path(article), confirm: 'Are you sure?', method: :delete
 %br/
