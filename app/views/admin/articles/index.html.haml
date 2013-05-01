@@ -11,8 +11,8 @@
         %td= article.title
         %td= link_to article.category.title, admin_category_path(article.category)
         %td
-          = link_to 'View', article_path(article), title: 'View this page live <br> (opens in a new window)', target: '_blank', class: 'tipped'
-          = link_to 'Edit', edit_admin_article_path(article), title: 'Edit this page', class: 'tipped'
-          = link_to 'Delete', admin_article_path(article), confirm: 'Are you sure?', method: :delete
+          = link_to image_tag('go.png'), article_path(article), title: 'View this page live <br> (opens in a new window)', target: '_blank', class: 'tipped'
+          = link_to image_tag('edit.png'), edit_admin_article_path(article), title: 'Edit this page', class: 'tipped'
+          = link_to image_tag('delete.png') , admin_article_path(article), confirm: 'Are you sure?', method: :delete, title: 'Delete this page forever', class: 'tipped'
 %br
 = link_to 'New Article', new_admin_article_path
