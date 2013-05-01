@@ -3,19 +3,16 @@
   %thead
     %tr
       %th Title
-      %th Content
       %th Category
-      %th
-      %th
-      %th
+      %th Actions
   %tbody
     - @articles.each do |article|
       %tr
         %td= article.title
-        %td= raw(article.content[0...100] + '...')
         %td= link_to article.category.title, admin_category_path(article.category)
-        %td= link_to 'View', article_path(article), title: 'View this page live (opens in a new window)', target: '_blank', class: 'tipped'
-        %td= link_to 'Edit', edit_admin_article_path(article)
-        %td= link_to 'Delete', admin_article_path(article), confirm: 'Are you sure?', method: :delete
+        %td
+          = link_to 'View', article_path(article), title: 'View this page live <br> (opens in a new window)', target: '_blank', class: 'tipped'
+          = link_to 'Edit', edit_admin_article_path(article), title: 'Edit this page', class: 'tipped'
+          = link_to 'Delete', admin_article_path(article), confirm: 'Are you sure?', method: :delete
 %br
 = link_to 'New Article', new_admin_article_path
