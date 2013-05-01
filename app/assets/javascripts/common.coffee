@@ -1,0 +1,5 @@
+$ ->
+
+  Tipped.create('.tipped')
+
+  
