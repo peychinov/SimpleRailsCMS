@@ -1,5 +1,5 @@
 %ul
   - categories.each do |category|
-    %li= link_to category.title, category
+    %li= link_to category.short_info, category
     - if category.child_categories.count > 0
       = render :partial => 'layouts/categories', :object => category.child_categories

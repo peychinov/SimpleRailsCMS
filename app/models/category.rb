@@ -13,4 +13,8 @@ class Category < ActiveRecord::Base
   validates :title, :presence => true
 
   default_scope :order => 'title ASC'
+
+  def short_info
+    "#{title} (#{articles.count})"
+  end
 end
