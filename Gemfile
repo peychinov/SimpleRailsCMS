@@ -38,6 +38,7 @@ gem "friendly_id", "~> 4.0.1"
 gem 'html2haml'
 gem 'haml'
 gem 'haml-rails'
+gem 'paper_trail', '~> 2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
