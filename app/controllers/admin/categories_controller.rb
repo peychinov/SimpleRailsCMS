@@ -61,7 +61,7 @@ class Admin::CategoriesController < Admin::AdminController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to admin_category_path(@category), notice: 'Category was successfully updated.' }
+        format.html { redirect_to admin_categories_url, notice: "Category was successfully updated. #{undo_link}" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,8 +77,14 @@ class Admin::CategoriesController < Admin::AdminController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_categories_url }
+      format.html { redirect_to admin_categories_url, notice: "Category was successfully deleted. #{undo_link}" }
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def undo_link
+      view_context.link_to(view_context.image_tag("undo.png"), revert_version_path(@category.versions.scoped.last), :method => :post, title: 'Undo', class: 'tipped')
+    end
 end

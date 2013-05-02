@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   attr_accessible :parent_id, :title
+  has_paper_trail
 
   has_many :articles  
   has_many :child_categories, :class_name => "Category", :foreign_key => "parent_id"

@@ -7,7 +7,9 @@ SimpleRailsCMS::Application.routes.draw do
   namespace :admin do
     resources :categories, :articles
   end
-  
+
+  post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,6 +6,8 @@ class Article < ActiveRecord::Base
   
   attr_accessible :content, :title, :category_id
 
+  has_paper_trail
+
   validates :title, :content, :presence => true
 
   default_scope :order => 'title ASC'

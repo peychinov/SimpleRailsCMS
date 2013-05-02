@@ -50,7 +50,7 @@ class Admin::ArticlesController < Admin::AdminController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to admin_article_path(@article), notice: 'Article was successfully updated.' }
+        format.html { redirect_to admin_articles_url, notice: "Article was successfully updated. #{undo_link}" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -66,8 +66,14 @@ class Admin::ArticlesController < Admin::AdminController
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_articles_url }
+      format.html { redirect_to admin_articles_url, notice: "Article was successfully deleted. #{undo_link}"  }
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def undo_link
+      view_context.link_to(view_context.image_tag("undo.png"), revert_version_path(@article.versions.scoped.last), :method => :post, title: 'Undo', class: 'tipped')
+    end
 end
