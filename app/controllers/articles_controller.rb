@@ -3,7 +3,7 @@ class ArticlesController < PublicController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order(:title).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

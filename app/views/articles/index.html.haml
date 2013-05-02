@@ -1,4 +1,7 @@
 %h1 Listing articles
+
+= paginate @articles
+
 %table.table.table-striped
   %thead
     %tr
@@ -11,3 +14,5 @@
         %td= article.title
         %td= raw(article.content[0...100] + '...')
         %td= link_to article.category.title, category_path(article.category)
+
+= paginate @articles
