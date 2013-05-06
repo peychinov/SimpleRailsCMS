@@ -120,3 +120,27 @@ a#site_bar_refinery_cms_logo:hover img {
   color: #32322B;
   background: white;
 }
+
+
+
+#actions {
+  ul {
+    margin: 0px 0px 18px 0px;
+    padding: 0;
+    list-style: none;
+  }
+
+  li a {
+    background-color: #dbedff;
+    background-position: 12px;
+    background-repeat: no-repeat;
+    border: 1px solid #65C3F7;
+    display: block;
+    padding: 9px 12px 9px 36px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #cae7fb;
+  }
+}
