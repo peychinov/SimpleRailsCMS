@@ -13,6 +13,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
   gem 'guard-coffeescript'
+  gem 'guard-sass'
   gem 'rb-inotify', '~> 0.9'
 end
 
