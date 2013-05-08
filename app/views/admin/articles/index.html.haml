@@ -9,7 +9,11 @@
       - @articles.each do |article|
         %tr
           %td= article.title
-          %td= link_to article.category.title, admin_category_path(article.category)
+          %td
+            - if article.category.present?
+              = link_to article.category.title, admin_category_path(article.category)
+            - else
+              No category.
           %td
             = link_to image_tag('go.png'), article_path(article), title: 'View this article live <br> (opens in a new window)', target: '_blank', class: 'tipped'
             = link_to image_tag('edit.png'), edit_admin_article_path(article), title: 'Edit this article', class: 'tipped'
