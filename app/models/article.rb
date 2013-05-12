@@ -11,4 +11,14 @@ class Article < ActiveRecord::Base
   validates :title, :content, :presence => true
 
   default_scope :order => 'title ASC'
+
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
+  def self.search(params)
+    tire.search(load: true, per_page: 1, page: params[:page] || 1) do
+      query { string params[:query]} if params[:query].present?
+      sort { by :title, 'desc' }
+    end
+  end
 end
