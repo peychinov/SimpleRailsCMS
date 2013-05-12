@@ -41,6 +41,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'paper_trail', '~> 2'
 gem 'kaminari'
+gem 'tire'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
