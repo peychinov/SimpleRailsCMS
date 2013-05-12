@@ -1,0 +1,8 @@
+- article = summary
+
+.article_summary
+  %span.title= link_to article.title, article
+  %span.category
+    Category:
+    = link_to article.category.title, category_path(article.category)
+  .contents= raw(article.content[0...100] + '...')
