@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
   include Tire::Model::Callbacks
 
   def self.search(params)
-    tire.search(load: true, per_page: 1, page: params[:page] || 1) do
+    tire.search(load: true, per_page: 3, page: params[:page] || 1) do
       query { string params[:query]} if params[:query].present?
       sort { by :title, 'desc' }
     end
