@@ -11,17 +11,6 @@ class Admin::CategoriesController < Admin::AdminController
     end
   end
 
-  # GET /categories/1
-  # GET /categories/1.json
-  def show
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @category }
-    end
-  end
-
   # GET /categories/new
   # GET /categories/new.json
   def new
@@ -45,7 +34,7 @@ class Admin::CategoriesController < Admin::AdminController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to admin_category_path(@category), notice: 'Category was successfully created.' }
+        format.html { redirect_to admin_categories_url, notice: 'Category was successfully created.' }
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }
