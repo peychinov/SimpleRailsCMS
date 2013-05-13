@@ -1,12 +1,12 @@
 %p#notice= notice
 %p
-  %h2= @category.title
-%p
-  %b Parent category:
-  - if @category.parent_category.present?
-    = link_to @category.parent_category.title, @category.parent_category
-  - else
-    %i None
+  %h2
+    = @category.title
+    - if @category.parent_category.present?
+      (in
+      = link_to @category.parent_category.title, @category.parent_category
+      )
+
 %p
   %h3 Articles in this category:
   - if @category.articles.count == 0

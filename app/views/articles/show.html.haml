@@ -1,11 +1,10 @@
 %p#notice= notice
 
-%p
-  %h2= @article.title
+%h2= @article.title
 
 .article_content
   = raw(@article.content)
 
 %p
-  %b In category:
+  %b In category
   = link_to @article.category.title, category_path(@article.category)
