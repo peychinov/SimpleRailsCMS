@@ -21,17 +21,15 @@
             = render 'layouts/admin_navigation'
       #main{:role => "main"}
         .container
-          .content{:style => "background-color: #ccc;"}
-            .row
-              .span3
-                .well.sidebar-nav
-                  = render 'layouts/admin_all_categories'
-                / /.well
-              .span9
-                = render 'layouts/messages'
-                = yield
-            %footer
-        / ! end of .container
+          .row
+            .span3
+              .well.sidebar-nav
+                = render 'layouts/admin_all_categories'
+              / /.well
+            .span8.content{:style => "background-color: #ccc;"}
+              = render 'layouts/messages'
+              = yield
+          %footer
       / ! end of #main
 /
   <title></haml:block><haml:silent></haml:silent><haml:block> </title>

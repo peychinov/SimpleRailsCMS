@@ -20,18 +20,15 @@
             = render 'layouts/navigation'
       #main{:role => "main"}
         .container
-          .content
-            .row
-              .span3
-                .well.sidebar-nav
-                  = render 'layouts/all_categories'
-                / /.well
-              .span9
-                = render 'layouts/messages'
-                = yield
-            %footer
-        / ! end of .container
-      / ! end of #main
+          .row
+            .span3
+              .well.sidebar-nav
+                = render 'layouts/all_categories'
+              / /.well
+            .span8.content
+              = render 'layouts/messages'
+              = yield
+          %footer
 /
   <title></haml:block><haml:silent></haml:silent><haml:block> </title>
   
