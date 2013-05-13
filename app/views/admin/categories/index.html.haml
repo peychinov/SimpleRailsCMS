@@ -1,19 +1,19 @@
-%h1 Listing categories
-%table.table.table-striped
-  %thead
-    %tr
-      %th Title
-      %th Parent
-      %th
-      %th
-      %th
-  %tbody
-    - @categories.each do |category|
+#records.span6
+  %table.table.table-striped
+    %thead
       %tr
-        %td= category.title
-        %td= category.parent_category.present? ? (link_to category.parent_category.title, category_path(category.parent_category)) : 'None'
-        %td= link_to 'Show', admin_category_path(category)
-        %td= link_to 'Edit', edit_admin_category_path(category)
-        %td= link_to 'Delete', admin_category_path(category), confirm: 'Are you sure?', method: :delete
-%br
-= link_to 'New Category', new_admin_category_path
+        %th Title
+        %th Parent
+        %th Actions
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td= category.title
+          %td= category.parent_category.present? ? (link_to category.parent_category.title, admin_category_path(category.parent_category)) : 'None'
+          %td
+            = link_to image_tag('edit.png'), edit_admin_category_path(category), title: 'Edit this category', class: 'tipped'
+            = link_to image_tag('delete.png') , admin_category_path(category), confirm: 'Are you sure?', method: :delete, title: 'Delete this category', class: 'tipped'
+
+#actions.pull-right{ style: 'width: 150px'}
+  %ul
+    %li= link_to 'Create new category', new_admin_category_path

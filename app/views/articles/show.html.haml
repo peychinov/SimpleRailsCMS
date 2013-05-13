@@ -5,6 +5,7 @@
 .article_content
   = raw(@article.content)
 
-%p
-  %b In category
-  = link_to @article.category.title, category_path(@article.category)
+- if @article.category.present?
+  %p
+    %b In category
+    = link_to @article.category.title, category_path(@article.category)
