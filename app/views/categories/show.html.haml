@@ -2,15 +2,15 @@
 %p
   %h2= @category.title
 %p
-  %b Parent:
+  %b Parent category:
   - if @category.parent_category.present?
     = link_to @category.parent_category.title, @category.parent_category
   - else
-    = 'None'
+    %i None
 %p
-  %h3 Articles
+  %h3 Articles in this category:
   - if @category.articles.count == 0
-    = 'None'
+    %i No articles in this category yet.
   - elsif @category.articles.count == 1
     - article = @category.articles.first
     .well{:style => "padding: 10px;"}
@@ -23,4 +23,3 @@
         %h4= link_to article.title, article
         .well{:style => "padding: 10px; margin-bottom: 0px; background-color: #d5d5d5"}
           = raw(article.content[0..150])
-= link_to 'Back', categories_path
