@@ -15,3 +15,5 @@
     = select("category", "parent_id", Category.find(:all).select{|c| c.id != @category.id}.collect {|c| [ c.title, c.id ] }, { :include_blank => true } )
   .actions
     = f.submit
+
+= link_to 'All articles', admin_categories_path
