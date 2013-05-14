@@ -17,5 +17,4 @@
 //= require jquery.purr
 //= require best_in_place
 //= require best_in_place.purr
-//= require articles
 //= require_tree .
