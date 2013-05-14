@@ -11,9 +11,9 @@
     = f.label :title
     = f.text_field :title
   .field
-    = f.text_area :content, :class => "wymeditor"
+    = f.text_area :content, :class => "ckeditor"
   .field
     = f.label :category_id
     = select("article", "category_id", Category.all.collect {|c| [ c.title, c.id ] }, { :include_blank => true } )
   .actions
-    = f.submit :class => "wymupdate"
+    = f.submit

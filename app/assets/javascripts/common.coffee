@@ -7,5 +7,3 @@ $ ->
       $(@).parent().addClass("active")
 
   Tipped.create('.tipped')
-
-  

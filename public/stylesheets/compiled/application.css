@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px;
+  /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+
+#site_bar, #site_bar * {
+  color: white;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: normal; }
+
+#editor_switch, #site_bar_branding, a#site_bar_refinery_cms_logo {
+  position: absolute; }
+
+#editor_switch {
+  left: 0px; }
+
+#site_bar_branding {
+  right: 0px; }
+
+#site_bar #site_bar_company_name {
+  font-weight: bold; }
+
+#site_bar #site_bar_branding a {
+  font-weight: normal; }
+
+#site_bar #site_bar_branding a#logout {
+  margin-left: 12px; }
+
+#site_bar * {
+  line-height: 47px; }
+
+#site_bar {
+  height: 47px;
+  background: #22a7f2;
+  padding: 0px; }
+
+#site_bar a {
+  border-bottom: 1px dotted white;
+  text-decoration: none; }
+
+#site_bar a:hover {
+  border-bottom: 1px solid white; }
+
+#site_bar_content {
+  height: 47px;
+  position: relative;
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto; }
+
+a#site_bar_refinery_cms_logo {
+  left: 44.5%;
+  border-bottom: none;
+  line-height: 29px;
+  height: 29px;
+  margin-top: 9px;
+  overflow: hidden; }
+
+a#site_bar_refinery_cms_logo:hover {
+  border-bottom: none;
+  opacity: 1; }
+
+a#site_bar_refinery_cms_logo:hover img {
+  margin-top: -29px; }
+
+#editor_switch a, #editor_switch a:hover {
+  color: white;
+  background: #e7682c url("orange_button.png") repeat-x;
+  border-bottom: 0px none;
+  padding: 4px 14px;
+  border: 1px solid #fca87f;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer; }
+
+#editor_switch span {
+  border: 1px solid #0280c7;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 9px;
+  display: block;
+  cursor: pointer; }
+
+#editor_switch a, #editor_switch span {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px; }
+
+.ie7 #site_bar #editor_switch a {
+  height: 26px;
+  line-height: 26px; }
+
+.container a:hover {
+  color: #32322B;
+  background: white; }
+
+#actions ul {
+  margin: 0px 0px 18px 0px;
+  padding: 0;
+  list-style: none; }
+#actions li a {
+  background-color: #dbedff;
+  background-position: 12px;
+  background-repeat: no-repeat;
+  border: 1px solid #65C3F7;
+  display: block;
+  padding: 9px 12px 9px 12px;
+  text-decoration: none;
+  text-align: center; }
+#actions li a:hover {
+  background-color: #cae7fb; }
+
+.article_summary {
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ddf;
+  margin-top: 2em; }
+  .article_summary .title {
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #888; }
+  .article_summary .category {
+    float: right; }
+  .article_summary .contents {
+    margin-top: 1em; }
+
+.article_content {
+  margin: 2em; }
