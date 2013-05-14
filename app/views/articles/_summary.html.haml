@@ -9,4 +9,4 @@
     - else
       %i None
 
-  .contents= raw(article.content[0...100] + '...')
+  .contents= strip_tags(article.content[0...100] + '...')
