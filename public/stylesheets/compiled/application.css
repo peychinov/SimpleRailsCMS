@@ -146,4 +146,5 @@ a#site_bar_refinery_cms_logo:hover img {
     margin-top: 1em; }
 
 .article_content {
-  margin: 2em; }
+  margin: 2em;
+  overflow: auto; }
