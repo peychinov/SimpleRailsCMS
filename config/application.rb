@@ -58,5 +58,7 @@ module SimpleRailsCMS
 
     # For deployment on Heroku (from the setup instructions of Devise)
     config.assets.initialize_on_precompile = false
+
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end

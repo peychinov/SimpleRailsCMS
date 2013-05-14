@@ -44,6 +44,8 @@ gem 'kaminari'
 gem 'tire'
 gem 'best_in_place'
 gem 'ckeditor'
+gem 'paperclip'
+gem 'aws-sdk'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
