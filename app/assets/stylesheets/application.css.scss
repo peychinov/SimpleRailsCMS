@@ -124,25 +124,31 @@ a#site_bar_refinery_cms_logo:hover img {
 
 
 #actions {
+  width: 150px;
+
   ul {
     margin: 0px 0px 18px 0px;
     padding: 0;
     list-style: none;
-  }
 
-  li a {
-    background-color: #dbedff;
-    background-position: 12px;
-    background-repeat: no-repeat;
-    border: 1px solid #65C3F7;
-    display: block;
-    padding: 9px 12px 9px 12px;
-    text-decoration: none;
-    text-align: center;
-  }
+    li {
+      margin-top: 10px;
 
-  li a:hover {
-    background-color: #cae7fb;
+      a {
+        background-color: #dbedff;
+        background-position: 12px;
+        background-repeat: no-repeat;
+        border: 1px solid #65C3F7;
+        display: block;
+        padding: 9px 12px 9px 12px;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+
+    li a:hover {
+      background-color: #cae7fb;
+    }
   }
 }
 

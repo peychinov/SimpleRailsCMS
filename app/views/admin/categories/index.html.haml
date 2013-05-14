@@ -1,4 +1,4 @@
-#records.span6
+#records.span7
   %table.table.table-striped
     %thead
       %tr
@@ -14,6 +14,4 @@
             = link_to image_tag('edit.png'), edit_admin_category_path(category), title: 'Edit this category', class: 'tipped'
             = link_to image_tag('delete.png') , admin_category_path(category), confirm: 'Are you sure?', method: :delete, title: 'Delete this category', class: 'tipped'
 
-#actions.pull-right{ style: 'width: 150px'}
-  %ul
-    %li= link_to 'Create new category', new_admin_category_path
+= render partial: 'admin/actions'

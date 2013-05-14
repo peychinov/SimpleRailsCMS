@@ -1,4 +1,4 @@
-#records.span6
+#records.span7
   %table.table.table-striped.middle
     %thead
       %tr
@@ -21,6 +21,4 @@
             = link_to image_tag('edit.png'), edit_admin_article_path(article), title: 'Edit this article', class: 'tipped'
             = link_to image_tag('delete.png') , admin_article_path(article), confirm: 'Are you sure?', method: :delete, title: 'Delete this article', class: 'tipped'
 
-#actions.pull-right{ style: 'width: 150px'}
-  %ul
-    %li= link_to 'Create new article', new_admin_article_path
+= render partial: 'admin/actions'
