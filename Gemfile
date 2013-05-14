@@ -23,10 +23,6 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
 	gem 'bootstrap-sass'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platform => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
