@@ -14,3 +14,7 @@
 /log/*.log
 /tmp
 /config/app_env_vars.rb
+
+# Ignore compiled assets except the manifest
+public/assets/
+!public/assets/manifest.yml
