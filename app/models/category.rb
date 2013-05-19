@@ -20,6 +20,21 @@ class Category < ActiveRecord::Base
     "#{title} (#{articles.count})"
   end
 
+  def self.children_json(parent_id = nil)
+    categories_json = []
+
+    categories = Category.where(parent_id: parent_id.presence)
+    categories.each do |category|
+      categories_json << category.json_data
+    end
+
+    categories_json
+  end
+
+  def json_data
+    { data: title, attr: { id: id }, children: Category.children_json(id) }
+  end
+
   private
 
     def disassociate

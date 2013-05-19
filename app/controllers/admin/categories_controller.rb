@@ -3,11 +3,9 @@ class Admin::CategoriesController < Admin::AdminController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
-    
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @categories }
+      format.html { @categories = Category.all }
+      format.json { render json: Category.children_json(params[:id]) }
     end
   end
 
@@ -76,4 +74,5 @@ class Admin::CategoriesController < Admin::AdminController
     def undo_link
       view_context.link_to(view_context.image_tag("undo.png"), revert_version_path(@category.versions.scoped.last), :method => :post, title: 'Undo', class: 'tipped')
     end
+
 end

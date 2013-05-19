@@ -6,7 +6,20 @@
         return $(this).parent().addClass("active");
       }
     });
-    return Tipped.create('.tipped');
+    Tipped.create('.tipped');
+    return $("#admin_categories_jstree").jstree({
+      json_data: {
+        ajax: {
+          url: "/admin/categories.json",
+          data: function(n) {
+            return {
+              id: (n.attr ? n.attr("id") : '')
+            };
+          }
+        }
+      },
+      plugins: ["themes", "json_data", "ui", "crrm", "contextmenu"]
+    });
   });
 
 }).call(this);
