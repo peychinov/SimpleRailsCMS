@@ -26,3 +26,7 @@ en:
     create: 'Create new article'
     view: 'View this article live <br> (opens in a new window)'
     all: 'All articles'
+  devise:
+    sign_in: 'Sign in'
+    sign_up: 'Sign up'
+    forgot_password: 'Forgot your password?'

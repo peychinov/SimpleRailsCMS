@@ -70,6 +70,11 @@ bg:
       create: "Създай %{model}"
       submit: "Запази %{model}"
       update: "Промени %{model}"
+    label:
+      admin:
+        email: 'Имейл'
+        password: 'Парола'
+        remember_me: 'Запомни ме'
   views:
     pagination:
       first: 'Първа'
@@ -77,3 +82,7 @@ bg:
       previous: 'Предишна'
       next: 'Следваща'
       last: 'Последна'
+  devise:
+    sign_in: 'Вход'
+    sign_up: 'Регистрация'
+    forgot_password: 'Забравена парола?'

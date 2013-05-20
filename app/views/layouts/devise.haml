@@ -17,6 +17,8 @@
         .container
           .content{style: 'width: 20%; margin: 0 auto;'}
             .row
+              .span7
+                = render partial: 'layouts/language'
               .span9
                 = render 'layouts/messages'
                 = yield
