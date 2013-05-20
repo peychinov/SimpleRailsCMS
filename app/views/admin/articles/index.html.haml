@@ -2,8 +2,8 @@
   %table.table.table-striped.middle
     %thead
       %tr
-        %th= Category.human_attribute_name(:title)
-        %th= Category.human_attribute_name(:category_id)
+        %th= Article.human_attribute_name(:title)
+        %th= Article.human_attribute_name(:category_id)
         %th= t('actions')
     %tbody
       - @articles.each do |article|
@@ -12,7 +12,7 @@
 
           %td
             - if article.category.present?
-              = link_to article.category.title, admin_category_path(article.category)
+              = link_to article.category.title, edit_admin_category_path(article.category)
             - else
               %i None
 
