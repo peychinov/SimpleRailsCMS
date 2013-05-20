@@ -1,7 +1,7 @@
 SimpleRailsCMS::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     resources :articles
     resources :categories
 
@@ -19,8 +19,6 @@ SimpleRailsCMS::Application.routes.draw do
 
     root :to => 'categories#index'
   end
-  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-  match '', to: redirect("/#{I18n.default_locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
