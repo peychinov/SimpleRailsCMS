@@ -34,7 +34,7 @@ class Admin::ArticlesController < Admin::AdminController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to admin_articles_url, notice: 'Article was successfully created.' }
+        format.html { redirect_to admin_articles_url, notice: t('articles.flash.created') }
         format.json { render json: @article, status: :created, location: @article }
       else
         format.html { render action: "new" }
@@ -50,7 +50,7 @@ class Admin::ArticlesController < Admin::AdminController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to admin_articles_url, notice: "Article was successfully updated. #{undo_link}" }
+        format.html { redirect_to admin_articles_url, notice: t('articles.flash.updated') + undo_link }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -66,7 +66,7 @@ class Admin::ArticlesController < Admin::AdminController
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_articles_url, notice: "Article was successfully deleted. #{undo_link}"  }
+      format.html { redirect_to admin_articles_url, notice: t('articles.flash.deleted') + undo_link }
       format.json { head :no_content }
     end
   end

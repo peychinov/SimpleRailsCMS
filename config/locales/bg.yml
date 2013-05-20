@@ -17,11 +17,12 @@ bg:
   categories:
     edit: 'Промени тази категория'
     delete: 'Изтрий тази категория'
-    create: 'Създай нова категория'
+    create: 'Добави нова категория'
     all: 'Всички категории'
     flash:
       created: "Категорията беше успешно създадена."
       updated: "Категорията беше успешно променена."
+      deleted: "Категорията беше успешно изтрита."
   articles:
     edit: 'Промени тази статия'
     delete: 'Изтрий тази статия'
@@ -31,6 +32,14 @@ bg:
     flash:
       created: "Статията беше успешно създадена."
       updated: "Статията беше успешно променена."
+      deleted: "Статията беше успешно изтрита."
+  admins:
+    all: 'Всички администратори'
+    create: 'Създай нов администратор'
+    delete: 'Премахни този администратор'
+    flash:
+      created: "Нов администратор беше успешно създаден."
+      deleted: "Този администратор беше успешно премахнат."
   activerecord:
     models:
       category:
@@ -39,6 +48,9 @@ bg:
       article:
         one: 'Статия'
         other: 'Статии'
+      admin:
+        one: 'Администратор'
+        other: 'Администратори'
     attributes:
       category:
         title: "Име"
@@ -47,6 +59,9 @@ bg:
         title: "Заглавие"
         content: 'Съдържание'
         category_id: 'Категория'
+      admin:
+        email: 'Имейл'
+        password: 'Парола'
     errors: 
       models:
         article:
@@ -65,6 +80,13 @@ bg:
           attributes:
             title:
               blank: 'не може да няма.'
+        admin:
+          not_saved:
+            one: 'Една грешка попречи този администратор да бъде създаден:'
+            other: '%{count} грешки попречиха този администратор да бъде създаден:'
+          attributes:
+            password:
+              confirmation: 'трябва да бъда потвърдена.'
   helpers:
     submit:
       create: "Създай %{model}"
@@ -74,6 +96,7 @@ bg:
       admin:
         email: 'Имейл'
         password: 'Парола'
+        password_confirmation: 'Въведете отново паролата'
         remember_me: 'Запомни ме'
   views:
     pagination:

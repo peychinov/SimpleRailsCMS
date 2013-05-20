@@ -1,6 +1,5 @@
 #actions.pull-right
   %ul
-    %li
-      = link_to t('articles.create'),  new_admin_article_path
-    %li
-      = link_to t('categories.create'), new_admin_category_path
+    %li= link_to t('articles.create'),   new_admin_article_path
+    %li= link_to t('categories.create'), new_admin_category_path
+    %li= link_to t('admins.create'),     new_admin_admin_path

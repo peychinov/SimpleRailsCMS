@@ -20,13 +20,39 @@ en:
     delete: 'Delete this category'
     create: 'Create new category'
     all: 'All categories'
+    flash:
+      created: "Category successfully created."
+      updated: "Category successfully updated."
+      deleted: "Category successfully removed."
   articles:
     edit: 'Edit this article'
     delete: 'Delete this article'
     create: 'Create new article'
     view: 'View this article live <br> (opens in a new window)'
     all: 'All articles'
+    flash:
+      created: "Article successfully created."
+      updated: "Article successfully updated."
+      deleted: "Article successfully removed."
+  admins:
+    all: 'All administrators'
+    create: 'Create new administrator'
+    delete: 'Remove this administrator'
+    flash:
+      created: "Administrator successfully created."
+      deleted: "Administrator successfully removed."
   devise:
     sign_in: 'Sign in'
     sign_up: 'Sign up'
     forgot_password: 'Forgot your password?'
+  activerecord:
+    models:
+      category:
+        one: 'Category'
+        other: 'Categories'
+      article:
+        one: 'Article'
+        other: 'Articles'
+      admin:
+        one: 'Administrator'
+        other: 'Administrators'

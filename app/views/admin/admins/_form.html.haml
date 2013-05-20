@@ -1,0 +1,21 @@
+= form_for @admin, :url => (@admin.id.present? ? admin_admin_path(@admin) : admin_admins_path) do |f|
+  - if @admin.errors.any?
+    #error_explanation
+      %h2
+        = t('activerecord.errors.models.admin.not_saved', count: @admin.errors.count)
+      %ul
+        - @admin.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit
+
+= link_to t('admins.all'), admin_admins_path

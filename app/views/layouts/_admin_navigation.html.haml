@@ -1,5 +1,6 @@
 %ul.nav.big
   %li.home-page-menu-item= link_to Category.model_name.human(count: 2), admin_categories_path
   %li.home-page-menu-item= link_to Article.model_name.human(count: 2), admin_articles_path
+  %li.home-page-menu-item= link_to Admin.model_name.human(count: 2), admin_admins_path
 
 = render partial: 'layouts/language'

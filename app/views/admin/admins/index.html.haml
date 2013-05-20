@@ -1,0 +1,15 @@
+#records.span7
+  %table.table.table-striped.middle
+    %thead
+      %tr
+        %th= Admin.human_attribute_name(:email)
+        %th= t('actions')
+    %tbody
+      - @admins.each do |admin|
+        %tr
+          %td= admin.email
+
+          %td
+            = link_to image_tag('delete.png') , admin_admin_path(admin), confirm: t('sure'), method: :delete, title: t('admins.delete'), class: 'tipped'
+
+= render partial: 'admin/actions'

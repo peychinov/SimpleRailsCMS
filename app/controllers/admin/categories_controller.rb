@@ -64,7 +64,7 @@ class Admin::CategoriesController < Admin::AdminController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_categories_url, notice: "Category was successfully deleted. #{undo_link}" }
+      format.html { redirect_to admin_categories_url, notice: t('categories.flash.deleted') + undo_link }
       format.json { head :no_content }
     end
   end
