@@ -3,14 +3,14 @@
   %h2
     = @category.title
     - if @category.parent_category.present?
-      (in
+      (
+      = t('in')
       = link_to @category.parent_category.title, @category.parent_category
       )
 
 %p
-  %h3 Articles in this category:
   - if @category.articles.count == 0
-    %i No articles in this category yet.
+    %h5= t('no_articles_in_this_category')
   - elsif @category.articles.count == 1
     - article = @category.articles.first
     .well{:style => "padding: 10px;"}
@@ -18,6 +18,7 @@
       .well{:style => "padding: 10px; margin-bottom: 0px; background-color: #d5d5d5"}
         = raw(article.content)
   - else
+    %h4= t('articles_in_this_category')
     - @category.articles.each do |article|
       .well{:style => "padding: 10px"}
         %h4= link_to article.title, article

@@ -1,0 +1,79 @@
+bg:
+  in: 'в'
+  actions: 'Действия'
+  articles_in_this_category: 'Това са всички статии в тази категория:'
+  no_articles_in_this_category: 'Все още няма статии в тази категория.'
+  sure: 'Сигурни ли сте?'
+  none: 'Няма'
+  switch_to_admin: "Отиди в администрацията"
+  switch_to_site: "Отиди на сайта"
+  logout: 'Излез'
+  search: 'Търси'
+  language: 'Език'
+  undid: 
+    create: 'Обекта беше успешно премахнат.'
+    update: 'Последните промени бяха върнати обратно.'
+    destroy: 'Изтритият обект беше успешно пресъздаден.'
+  categories:
+    edit: 'Промени тази категория'
+    delete: 'Изтрий тази категория'
+    create: 'Създай нова категория'
+    all: 'Всички категории'
+    flash:
+      created: "Категорията беше успешно създадена."
+      updated: "Категорията беше успешно променена."
+  articles:
+    edit: 'Промени тази статия'
+    delete: 'Изтрий тази статия'
+    create: 'Създай нова статия'
+    view: 'Виж тази статия на живо <br> (отваря се в нов таб)'
+    all: 'Всички статии'
+    flash:
+      created: "Статията беше успешно създадена."
+      updated: "Статията беше успешно променена."
+  activerecord:
+    models:
+      category:
+        one: 'Категория'
+        other: 'Категории'
+      article:
+        one: 'Статия'
+        other: 'Статии'
+    attributes:
+      category:
+        title: "Име"
+        parent_id: 'По-горна категория'
+      article:
+        title: "Заглавие"
+        content: 'Съдържание'
+        category_id: 'Категория'
+    errors: 
+      models:
+        article:
+          not_saved:
+            one: 'Една грешка попречи тази статия да бъде записана:'
+            other: '%{count} грешки попречиха тази статия да бъде записана:'
+          attributes:
+            title:
+              blank: 'не може да няма.'
+            content:
+              blank: 'не може да няма.'
+        category:
+          not_saved:
+            one: 'Една грешка попречи тази категория да бъде записана:'
+            other: '%{count} грешки попречиха тази категория да бъде записана:'
+          attributes:
+            title:
+              blank: 'не може да няма.'
+  helpers:
+    submit:
+      create: "Създай %{model}"
+      submit: "Запази %{model}"
+      update: "Промени %{model}"
+  views:
+    pagination:
+      first: 'Първа'
+      second: 'Втора'
+      previous: 'Предишна'
+      next: 'Следваща'
+      last: 'Последна'

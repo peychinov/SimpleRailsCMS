@@ -2,16 +2,16 @@
   %table.table.table-striped
     %thead
       %tr
-        %th Title
-        %th Parent
-        %th Actions
+        %th= Category.human_attribute_name(:title)
+        %th= Category.human_attribute_name(:parent_id)
+        %th= t 'actions'
     %tbody
       - @categories.each do |category|
         %tr
           %td= category.title
-          %td= category.parent_category.present? ? (link_to category.parent_category.title, admin_category_path(category.parent_category)) : 'None'
+          %td= category.parent_category.present? ? (link_to category.parent_category.title, admin_category_path(category.parent_category)) : t('none')
           %td
-            = link_to image_tag('edit.png'), edit_admin_category_path(category), title: 'Edit this category', class: 'tipped'
-            = link_to image_tag('delete.png') , admin_category_path(category), confirm: 'Are you sure?', method: :delete, title: 'Delete this category', class: 'tipped'
+            = link_to image_tag('edit.png'), edit_admin_category_path(category), title: t('categories.edit'), class: 'tipped'
+            = link_to image_tag('delete.png') , admin_category_path(category), confirm: t('sure'), method: :delete, title: t('categories.delete'), class: 'tipped'
 
 = render partial: 'admin/actions'

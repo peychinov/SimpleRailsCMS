@@ -7,5 +7,5 @@
 
 - if @article.category.present?
   %p
-    %b In category
+    %b= Category.model_name.human(count: 1) + ':'
     = link_to @article.category.title, category_path(@article.category)

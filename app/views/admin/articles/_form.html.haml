@@ -2,8 +2,7 @@
   - if @article.errors.any?
     #error_explanation
       %h2
-        = pluralize(@article.errors.count, "error")
-        prohibited this article from being saved:
+        = t('activerecord.errors.models.article.not_saved', count: @article.errors.count)
       %ul
         - @article.errors.full_messages.each do |msg|
           %li= msg
@@ -18,4 +17,4 @@
   .actions
     = f.submit
 
-= link_to 'All articles', admin_articles_path
+= link_to t('articles.all'), admin_articles_path

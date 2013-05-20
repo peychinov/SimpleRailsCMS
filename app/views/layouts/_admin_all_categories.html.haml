@@ -1,5 +1,5 @@
 %div
-  %h2 Categories
+  %h2= Category.model_name.human(count: 2)
 %ul.nav.nav-list
   - @root_categories.each do |category|
     %li.nav-header= link_to category.short_info, admin_category_path(category)

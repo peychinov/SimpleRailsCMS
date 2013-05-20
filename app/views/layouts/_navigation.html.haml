@@ -1,4 +1,5 @@
 %ul.nav.big
-  %li.home-page-menu-item= link_to "Home", '/'
-  %li.home-page-menu-item= link_to "Categories", categories_path
-  %li.home-page-menu-item= link_to "Articles", articles_path
+  %li.home-page-menu-item= link_to Category.model_name.human(count: 2), categories_path
+  %li.home-page-menu-item= link_to Article.model_name.human(count: 2), articles_path
+
+= render partial: 'layouts/language'

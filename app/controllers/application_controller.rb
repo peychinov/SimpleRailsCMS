@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :load_root_categories
+  before_filter :load_root_categories, :set_locale
 
   def track_last_public_url
   	@last_public_url = request.url
@@ -18,4 +18,12 @@ class ApplicationController < ActionController::Base
     def load_root_categories
       @root_categories = Category.where(:parent_id => nil)
     end
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+  def default_url_options(options = {})
+    {locale: I18n.locale}
+  end
 end

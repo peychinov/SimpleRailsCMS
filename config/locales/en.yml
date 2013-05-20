@@ -2,4 +2,27 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  actions: 'Actions'
+  articles_in_this_category: 'Articles in this category:'
+  no_articles_in_this_category: 'There are no articles in this category yet.'
+  sure: 'Are you sure?'
+  none: 'None'
+  switch_to_admin: "Switch to your website editor"
+  switch_to_site: "Switch to your website"
+  logout: 'Logout'
+  search: 'Search'
+  undid:
+    create: 'Undid create.'
+    update: 'Undid update.'
+    destroy: 'Undid destroy.'
+  categories:
+    edit: 'Edit this category'
+    delete: 'Delete this category'
+    create: 'Create new category'
+    all: 'All categories'
+  articles:
+    edit: 'Edit this article'
+    delete: 'Delete this article'
+    create: 'Create new article'
+    view: 'View this article live <br> (opens in a new window)'
+    all: 'All articles'

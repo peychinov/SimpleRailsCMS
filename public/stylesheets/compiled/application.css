@@ -155,3 +155,7 @@ a#site_bar_refinery_cms_logo:hover img {
 
 .nav.big {
   font-size: 1.7em; }
+
+.language {
+  vertical-align: middle;
+  height: 100%; }

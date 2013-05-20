@@ -1,20 +1,26 @@
 SimpleRailsCMS::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :articles
-  resources :categories
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :articles
+    resources :categories
 
-  devise_for :admins
+    devise_for :admins
 
-  devise_scope :admin do
-    get "admin", :to => "devise/sessions#new"
+    devise_scope :admin do
+      get "admin", :to => "devise/sessions#new"
+    end
+
+    namespace :admin do
+      resources :categories, :articles
+    end
+
+    post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+
+    root :to => 'categories#index'
   end
-
-  namespace :admin do
-    resources :categories, :articles
-  end
-
-  post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  match '', to: redirect("/#{I18n.default_locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,10 +68,6 @@ SimpleRailsCMS::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'categories#index'
 
   # See how all your routes lay out with "rake routes"
 
