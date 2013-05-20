@@ -8,7 +8,7 @@
           %li= msg
   .field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, autofocus: true
   .field
     = f.label :parent_id
     = select("category", "parent_id", Category.find(:all).select{|c| c.id != @category.id}.collect {|c| [ c.title, c.id ] }, { :include_blank => true } )
