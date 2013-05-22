@@ -10,7 +10,7 @@
     });
     Tipped.create('.tipped');
     bg = window.location.href.indexOf("/bg/") > -1;
-    return $("#admin_categories_jstree").jstree({
+    $("#admin_categories_jstree").jstree({
       json_data: {
         ajax: {
           url: "/admin/categories.json",
@@ -85,6 +85,23 @@
       return $.ajax("/admin/categories/" + id + ".json", {
         type: 'DELETE'
       });
+    });
+    return $("#website_categories_jstree").jstree({
+      json_data: {
+        ajax: {
+          url: "/admin/categories.json",
+          data: function(n) {
+            return {
+              id: (n.attr ? n.attr("id") : '')
+            };
+          }
+        }
+      },
+      plugins: ["themes", "json_data", 'ui']
+    }).bind("loaded.jstree", function(event, data) {
+      return $(this).jstree("open_all");
+    }).bind("select_node.jstree", function(evt, data) {
+      return window.location = '/categories/' + data.rslt.obj.attr("id");
     });
   });
 

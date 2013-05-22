@@ -1,7 +1,9 @@
-%div
-  %h2= Category.model_name.human(count: 2)
-%ul.nav.nav-list
-  - @root_categories.each do |category|
-    %li.nav-header= link_to category.short_info, edit_admin_category_path(category)
-    - if category.child_categories.count > 0
-      = render :partial => 'layouts/admin_categories', :object => category.child_categories
+%h4= Category.model_name.human(count: 2)
+
+#admin_categories_jstree
+
+/ %ul.nav.nav-list
+/   - @root_categories.each do |category|
+/     %li.nav-header= link_to category.short_info, edit_admin_category_path(category)
+/     - if category.child_categories.count > 0
+/       = render :partial => 'layouts/admin_categories', :object => category.child_categories

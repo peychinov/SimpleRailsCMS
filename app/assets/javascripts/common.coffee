@@ -58,3 +58,16 @@ $ ->
     $.ajax "/admin/categories/#{id}.json",
       type: 'DELETE'
   )
+
+  $("#website_categories_jstree").jstree(
+    json_data:
+      ajax:
+        url: "/admin/categories.json"
+        data: (n) ->
+          id: (if n.attr then n.attr("id") else '')
+    plugins: ["themes", "json_data", 'ui']
+  ).bind("loaded.jstree", (event, data) ->
+    $(this).jstree("open_all")
+  ).bind("select_node.jstree", (evt, data) ->
+    window.location = '/categories/' + data.rslt.obj.attr("id")
+  )

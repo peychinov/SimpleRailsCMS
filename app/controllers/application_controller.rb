@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :load_root_categories, :set_locale, :set_is_in_editor
+  before_filter :set_locale, :set_is_in_editor # :load_root_categories
 
   def track_last_public_url
   	@last_public_url = request.url if request.format == 'text/html'
@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
 	    admin_categories_path
 	  end
 
-    def load_root_categories
-      @root_categories = Category.where(:parent_id => nil)
-    end
+    # def load_root_categories
+    #   @root_categories = Category.where(:parent_id => nil)
+    # end
 
     def set_locale
       I18n.locale = params[:locale] if params[:locale].present?
