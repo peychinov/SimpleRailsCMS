@@ -25,6 +25,8 @@ $ ->
         remove:
           label: if bg then 'Премахни' else 'Remove'
         ccp: false
+    themes:
+      url: '/assets/themes/default/style.css'
     plugins: ["themes", "json_data", 'ui', 'crrm', 'contextmenu']
   ).bind("loaded.jstree", (event, data) ->
     $(this).jstree("open_all")

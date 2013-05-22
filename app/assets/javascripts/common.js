@@ -35,6 +35,9 @@
           ccp: false
         }
       },
+      themes: {
+        url: '/assets/themes/default/style.css'
+      },
       plugins: ["themes", "json_data", 'ui', 'crrm', 'contextmenu']
     }).bind("loaded.jstree", function(event, data) {
       return $(this).jstree("open_all");
