@@ -1,1 +1,0 @@
-var $.jstree.THEMES_DIR = '/assets/jstree/themes/';

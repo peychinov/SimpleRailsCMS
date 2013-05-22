@@ -17,5 +17,4 @@
 //= require jquery.purr
 //= require best_in_place
 //= require best_in_place.purr
-//= require fix_for_jstree
 //= require_tree .
