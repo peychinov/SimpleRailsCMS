@@ -15,8 +15,8 @@ redo.png: redo-8c45329631df9bb1f3d9668d99cb6cef.png
 redo/index.png: redo-8c45329631df9bb1f3d9668d99cb6cef.png
 undo.png: undo-5ff1858be478023095392f7a6d94433d.png
 undo/index.png: undo-5ff1858be478023095392f7a6d94433d.png
-application.js: application-57a7d781840ffffa9a7fbc3da12b1012.js
-application/index.js: application-57a7d781840ffffa9a7fbc3da12b1012.js
+application.js: application-76473404d3bd1493a6738452b227778a.js
+application/index.js: application-76473404d3bd1493a6738452b227778a.js
 themes/apple/bg.jpg: themes/apple/bg-7eee3e911f1ff3f28107ac3ea5a7e127.jpg
 themes/apple/bg/index.jpg: themes/apple/bg-7eee3e911f1ff3f28107ac3ea5a7e127.jpg
 themes/apple/d.png: themes/apple/d-b42452cf67323e89b8ba648ab75adb1b.png
