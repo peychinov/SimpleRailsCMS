@@ -100,6 +100,9 @@
           }
         }
       },
+      themes: {
+        url: '/assets/themes/default/style.css'
+      },
       plugins: ["themes", "json_data", 'ui']
     }).bind("loaded.jstree", function(event, data) {
       return $(this).jstree("open_all");
