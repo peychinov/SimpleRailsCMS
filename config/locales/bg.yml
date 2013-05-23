@@ -11,7 +11,6 @@ bg:
   search: 'Търси'
   language: 'Език'
   tags: 'Тагове'
-  tag_cloud: 'Използвани тагове'
   keywords: 'Ключови думи'
   undid: 
     create: 'Обекта беше успешно премахнат.'
