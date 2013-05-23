@@ -187,3 +187,13 @@ a#site_bar_refinery_cms_logo:hover img {
   vertical-align: middle;
   height: 100%;
 }
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .css1 { font-size: 0.8em; }
+  .css2 { font-size: 1.0em; }
+  .css3 { font-size: 1.2em; }
+  .css4 { font-size: 1.4em; }
+  .css5 { font-size: 1.6em; }
+}

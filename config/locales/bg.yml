@@ -10,6 +10,8 @@ bg:
   logout: 'Излез'
   search: 'Търси'
   language: 'Език'
+  tags: 'Тагове'
+  tag_cloud: 'Използвани тагове'
   undid: 
     create: 'Обекта беше успешно премахнат.'
     update: 'Последните промени бяха върнати обратно.'
@@ -59,6 +61,7 @@ bg:
         title: "Заглавие"
         content: 'Съдържание'
         category_id: 'Категория'
+        tag_list: 'Тагове'
       admin:
         email: 'Имейл'
         password: 'Парола'

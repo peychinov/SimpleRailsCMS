@@ -16,6 +16,8 @@ SimpleRailsCMS::Application.routes.draw do
     end
 
     post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+
+    get 'tags/:tag', to: 'articles#index', as: :tag
   end
 
   root :to => 'categories#index'

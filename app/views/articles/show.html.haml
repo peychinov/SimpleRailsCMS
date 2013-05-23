@@ -9,3 +9,5 @@
   %p
     %b= Category.model_name.human(count: 1) + ':'
     = link_to @article.category.title, category_path(@article.category)
+
+= render partial: '/articles/tags', locals: { article: @article }

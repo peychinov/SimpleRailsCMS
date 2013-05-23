@@ -24,7 +24,8 @@
             .span3
               .well.sidebar-nav
                 = render 'layouts/all_categories'
-              / /.well
+              .well.sidebar-nav
+                = render partial: '/tag_cloud'
             .span9.content
               = render 'layouts/messages'
               = yield

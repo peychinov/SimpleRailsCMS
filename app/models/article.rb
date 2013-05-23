@@ -4,7 +4,9 @@ class Article < ActiveRecord::Base
 
   belongs_to :category
   
-  attr_accessible :content, :title, :category_id
+  attr_accessible :content, :title, :category_id, :tag_list
+
+  acts_as_taggable
 
   has_paper_trail
 
@@ -21,4 +23,5 @@ class Article < ActiveRecord::Base
       sort { by :title, 'desc' }
     end
   end
+
 end

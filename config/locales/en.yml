@@ -11,6 +11,7 @@ en:
   switch_to_site: "Switch to your website"
   logout: 'Logout'
   search: 'Search'
+  tag_cloud: 'Tag cloud'
   undid:
     create: 'Undid create.'
     update: 'Undid update.'
@@ -56,3 +57,6 @@ en:
       admin:
         one: 'Administrator'
         other: 'Administrators'
+    attributes:
+      article:
+        tag_list: 'Tags'

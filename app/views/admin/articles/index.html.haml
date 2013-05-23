@@ -4,6 +4,7 @@
       %tr
         %th= Article.human_attribute_name(:title)
         %th= Article.human_attribute_name(:category_id)
+        %th= Article.human_attribute_name(:tag_list)
         %th= t('actions')
     %tbody
       - @articles.each do |article|
@@ -15,6 +16,9 @@
               = link_to article.category.title, edit_admin_category_path(article.category)
             - else
               %i None
+
+          %td
+            = raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 
           %td
             = link_to image_tag('go.png'), article_path(article), title: t('articles.view'), target: '_blank', class: 'tipped'
