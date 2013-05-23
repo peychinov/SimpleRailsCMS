@@ -1,0 +1,4 @@
+= form_tag articles_path, method: :get do
+  = text_field_tag :query, params[:query]
+  = submit_tag t("search"), name: nil, style: 'margin-bottom: 10px'
+
