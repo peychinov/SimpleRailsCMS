@@ -4,9 +4,9 @@
     = text_field_tag :keywords, params[:keywords]
   .field
     %label= t('tags')
-    = text_field_tag :tag, params[:tag]
+    = select_tag("tag", options_for_select([["Any tag" , '' ]] + ActsAsTaggableOn::Tag.all.collect { |tag| [tag.name, tag.name] }, params[:tag]))
   .field
     %label= Category.model_name.human(count: 1)
-    = text_field_tag :category, params[:category]
+    = select_tag("category_id", options_for_select([["Any category" , '' ]] + Category.all.collect {|c| [ c.title, c.id ] }, params[:category_id]))
 
   = submit_tag t("search"), name: nil
