@@ -1,4 +1,12 @@
 = form_tag articles_path, method: :get do
-  = text_field_tag :query, params[:query]
-  = submit_tag t("search"), name: nil, style: 'margin-bottom: 10px'
+  .field
+    %label= t('keywords')
+    = text_field_tag :keywords, params[:keywords]
+  .field
+    %label= t('tags')
+    = text_field_tag :tag, params[:tag]
+  .field
+    %label= Category.model_name.human(count: 1)
+    = text_field_tag :category, params[:category]
 
+  = submit_tag t("search"), name: nil
