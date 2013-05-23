@@ -144,8 +144,6 @@ a#site_bar_refinery_cms_logo:hover img {
     font-weight: bolder;
     font-size: 1.5em;
     color: #888; }
-  .article_summary .tags {
-    margin-right: 10px; }
   .article_summary .contents {
     margin-top: 1em; }
 
@@ -161,7 +159,6 @@ a#site_bar_refinery_cms_logo:hover img {
   height: 100%; }
 
 #tag_cloud {
-  width: 400px;
   line-height: 1.6em; }
   #tag_cloud .css1 {
     font-size: 0.8em; }
