@@ -21,6 +21,9 @@ SimpleRailsCMS::Application.routes.draw do
   end
 
   root :to => 'categories#index'
+
+  match '/homepage' => redirect('/categories')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
