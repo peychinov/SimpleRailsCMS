@@ -89,7 +89,7 @@
         type: 'DELETE'
       });
     });
-    return $("#website_categories_jstree").jstree({
+    $("#website_categories_jstree").jstree({
       json_data: {
         ajax: {
           url: "/admin/categories.json",
@@ -108,6 +108,34 @@
       return $(this).jstree("open_all");
     }).bind("select_node.jstree", function(evt, data) {
       return window.location = '/categories/' + data.rslt.obj.attr("id");
+    });
+    return $('#search').on('click', function() {
+      var form;
+
+      form = $(this).closest('form');
+      $.ajax(form.attr('action') + '.js', {
+        data: form.serialize(),
+        complete: function(response) {
+          return $('.content').html(response.responseText);
+        }
+      });
+      $("#website_categories_jstree").jstree({
+        json_data: {
+          ajax: {
+            url: "/admin/categories/for_articles.json",
+            data: form.serialize()
+          }
+        },
+        themes: {
+          url: '/assets/themes/default/style.css'
+        },
+        plugins: ["themes", "json_data", 'ui']
+      }).bind("loaded.jstree", function(event, data) {
+        return $(this).jstree("open_all");
+      }).bind("select_node.jstree", function(evt, data) {
+        return window.location = '/categories/' + data.rslt.obj.attr("id");
+      });
+      return false;
     });
   });
 

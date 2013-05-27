@@ -6,7 +6,8 @@ class ArticlesController < PublicController
     @articles = Article.search(params)
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
+      format.js   { render partial: 'articles' }
       format.json { render json: @articles }
     end
   end

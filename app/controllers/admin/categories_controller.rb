@@ -9,6 +9,16 @@ class Admin::CategoriesController < Admin::AdminController
     end
   end
 
+  def for_articles
+    articles = Article.search(params)
+    categories = Category.for_articles(articles)
+    categories_json = Category.children_json(params[:id], categories.map(&:id))
+
+    respond_to do |format|
+      format.json { render json: categories_json }
+    end
+  end
+
   # GET /categories/new
   # GET /categories/new.json
   def new

@@ -9,4 +9,4 @@
     = label_tag :category_id, Category.model_name.human(count: 1)
     = select_tag("category_id", options_for_select([["Any category" , '' ]] + Category.all.collect {|c| [ "#{c.title} (#{c.articles.count})", c.id ] }, params[:category_id]))
 
-  = submit_tag t("search"), name: nil
+  = submit_tag t("search"), name: nil, id: 'search'

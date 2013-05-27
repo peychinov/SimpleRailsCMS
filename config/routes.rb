@@ -12,7 +12,12 @@ SimpleRailsCMS::Application.routes.draw do
     end
 
     namespace :admin do
-      resources :categories, :articles, :admins
+      resources :articles, :admins
+      resources :categories do
+        collection do
+          get 'for_articles'
+        end
+      end
     end
 
     post "versions/:id/revert" => "versions#revert", :as => "revert_version"

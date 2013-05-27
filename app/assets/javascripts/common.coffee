@@ -75,3 +75,26 @@ $ ->
   ).bind("select_node.jstree", (evt, data) ->
     window.location = '/categories/' + data.rslt.obj.attr("id")
   )
+
+  $('#search').on 'click', ->
+    form = $(@).closest('form')
+    $.ajax form.attr('action') + '.js',
+      data: form.serialize()
+      complete: (response) ->
+        $('.content').html(response.responseText)
+
+    $("#website_categories_jstree").jstree(
+      json_data:
+        ajax:
+          url: "/admin/categories/for_articles.json"
+          data: form.serialize()
+      themes:
+        url: '/assets/themes/default/style.css'
+      plugins: ["themes", "json_data", 'ui']
+    ).bind("loaded.jstree", (event, data) ->
+      $(this).jstree("open_all")
+    ).bind("select_node.jstree", (evt, data) ->
+      window.location = '/categories/' + data.rslt.obj.attr("id")
+    )
+
+    false

@@ -20,19 +20,38 @@ class Category < ActiveRecord::Base
     "#{title} (#{articles.count})"
   end
 
-  def self.children_json(parent_id = nil)
+  def self.children_json(parent_id = nil, categories_ids = nil)
     categories_json = []
 
     categories = Category.where(parent_id: parent_id.presence)
     categories.each do |category|
-      categories_json << category.json_data
+      categories_json << category.json_data(categories_ids) if categories_ids.nil? || categories_ids.include?(category.id)
     end
 
     categories_json
   end
 
-  def json_data
-    { data: title, attr: { id: id }, children: Category.children_json(id) }
+  def self.for_articles(articles)
+    categories = []
+
+    articles.each do |article|
+      categories << article.category.parents if article.category
+    end
+
+    categories.flatten.uniq
+  end
+
+  def parents(including_self = true)
+    categories = []
+
+    categories << self if including_self
+    categories << Category.find(parent_id).parents if parent_id
+
+    categories
+  end
+
+  def json_data(categories_ids = nil)
+    { data: title, attr: { id: id }, children: Category.children_json(id, categories_ids) }
   end
 
   private
