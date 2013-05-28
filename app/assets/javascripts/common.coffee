@@ -9,6 +9,7 @@ $ ->
   Tipped.create('.tipped')
 
   bg = window.location.href.indexOf("/bg/") > -1
+  locale = if bg then '/bg' else '/en'
 
   $("#admin_categories_jstree").jstree(
     json_data:
@@ -31,7 +32,9 @@ $ ->
   ).bind("loaded.jstree", (event, data) ->
     $(this).jstree("open_all")
   ).bind("select_node.jstree", (evt, data) ->
-    window.location = '/admin/categories/' + data.rslt.obj.attr("id") + '/edit'
+    bg = window.location.href.indexOf("/bg/") > -1
+    locale = if bg then '/bg' else '/en'
+    window.location = locale + '/admin/categories/' + data.rslt.obj.attr("id") + '/edit'
   ).bind("create.jstree", (evt, data) ->
     parent_id = data.inst._get_parent(data.rslt.obj).attr("id")
     title = data.rslt.obj[0].innerText.replace /^\s+/g, ""
@@ -76,7 +79,9 @@ $ ->
     ).bind("loaded.jstree", (event, data) ->
       $(this).jstree("open_all")
     ).bind("select_node.jstree", (evt, data) ->
-      window.location = '/categories/' + data.rslt.obj.attr("id")
+      bg = window.location.href.indexOf("/bg/") > -1
+      locale = if bg then '/bg' else '/en'
+      window.location = locale + '/categories/' + data.rslt.obj.attr("id")
     )
 
   false

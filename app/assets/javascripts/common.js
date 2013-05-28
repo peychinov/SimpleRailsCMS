@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var bg, search_results;
+    var bg, locale, search_results;
 
     $('.best_in_place').best_in_place();
     $('.nav a').each(function() {
@@ -10,6 +10,7 @@
     });
     Tipped.create('.tipped');
     bg = window.location.href.indexOf("/bg/") > -1;
+    locale = bg ? '/bg' : '/en';
     $("#admin_categories_jstree").jstree({
       json_data: {
         ajax: {
@@ -42,7 +43,9 @@
     }).bind("loaded.jstree", function(event, data) {
       return $(this).jstree("open_all");
     }).bind("select_node.jstree", function(evt, data) {
-      return window.location = '/admin/categories/' + data.rslt.obj.attr("id") + '/edit';
+      bg = window.location.href.indexOf("/bg/") > -1;
+      locale = bg ? '/bg' : '/en';
+      return window.location = locale + '/admin/categories/' + data.rslt.obj.attr("id") + '/edit';
     }).bind("create.jstree", function(evt, data) {
       var parent_id, title,
         _this = this;
@@ -109,7 +112,9 @@
       }).bind("loaded.jstree", function(event, data) {
         return $(this).jstree("open_all");
       }).bind("select_node.jstree", function(evt, data) {
-        return window.location = '/categories/' + data.rslt.obj.attr("id");
+        bg = window.location.href.indexOf("/bg/") > -1;
+        locale = bg ? '/bg' : '/en';
+        return window.location = locale + '/categories/' + data.rslt.obj.attr("id");
       });
     }
     return false;
