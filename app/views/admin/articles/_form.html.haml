@@ -15,7 +15,7 @@
     = f.label :category_id
     = select :article, :category_id, Category.all.collect {|c| [ c.title, c.id ] }, { :include_blank => true }
   .field
-    = f.label :tag_list, t('tags_separated_by_commas')
+    = f.label :tag_list, t('tags')
     = f.text_field :tag_list
   .actions
     = f.submit

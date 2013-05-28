@@ -12,7 +12,6 @@ en:
   logout: 'Logout'
   search: 'Search'
   tag_cloud: 'Tag cloud'
-  tags_separated_by_commas: "Tags (separated by commas)"
   undid:
     create: 'Undid create.'
     update: 'Undid update.'
