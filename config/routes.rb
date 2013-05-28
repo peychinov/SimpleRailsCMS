@@ -2,8 +2,13 @@ SimpleRailsCMS::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-    resources :articles
     resources :categories
+
+    resources :articles do
+      collection do
+        get 'search'
+      end
+    end
 
     devise_for :admins
 
@@ -13,6 +18,7 @@ SimpleRailsCMS::Application.routes.draw do
 
     namespace :admin do
       resources :articles, :admins
+
       resources :categories do
         collection do
           get 'for_articles'

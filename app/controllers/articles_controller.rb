@@ -7,8 +7,17 @@ class ArticlesController < PublicController
 
     respond_to do |format|
       format.html
-      format.js   { render partial: 'articles' }
       format.json { render json: @articles }
+    end
+  end
+
+  def search
+    @articles = Article.search(params)
+    categories = Category.for_articles(@articles)
+    @categories_json = Category.children_json(params[:id], categories.map(&:id)).to_json
+
+    respond_to do |format|
+      format.html
     end
   end
 

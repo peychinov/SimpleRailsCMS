@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var bg;
+    var bg, search_results;
 
     $('.best_in_place').best_in_place();
     $('.nav a').each(function() {
@@ -89,41 +89,17 @@
         type: 'DELETE'
       });
     });
-    $("#website_categories_jstree").jstree({
-      json_data: {
-        ajax: {
-          url: "/admin/categories.json",
-          data: function(n) {
-            return {
-              id: (n.attr ? n.attr("id") : '')
-            };
-          }
-        }
-      },
-      themes: {
-        url: '/assets/themes/default/style.css'
-      },
-      plugins: ["themes", "json_data", 'ui']
-    }).bind("loaded.jstree", function(event, data) {
-      return $(this).jstree("open_all");
-    }).bind("select_node.jstree", function(evt, data) {
-      return window.location = '/categories/' + data.rslt.obj.attr("id");
-    });
-    return $('#search').on('click', function() {
-      var form;
-
-      form = $(this).closest('form');
-      $.ajax(form.attr('action') + '.js', {
-        data: form.serialize(),
-        complete: function(response) {
-          return $('.content').html(response.responseText);
-        }
-      });
+    search_results = window.location.href.indexOf("articles/search") > -1;
+    if (!search_results) {
       $("#website_categories_jstree").jstree({
         json_data: {
           ajax: {
-            url: "/admin/categories/for_articles.json",
-            data: form.serialize()
+            url: "/admin/categories.json",
+            data: function(n) {
+              return {
+                id: (n.attr ? n.attr("id") : '')
+              };
+            }
           }
         },
         themes: {
@@ -135,8 +111,8 @@
       }).bind("select_node.jstree", function(evt, data) {
         return window.location = '/categories/' + data.rslt.obj.attr("id");
       });
-      return false;
-    });
+    }
+    return false;
   });
 
 }).call(this);

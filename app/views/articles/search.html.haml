@@ -1,0 +1,16 @@
+= render partial: 'articles'
+
+:javascript
+  $("#website_categories_jstree").jstree({
+    json_data: {
+      data: #{@categories_json}
+    },
+    themes: {
+      url: '/assets/themes/default/style.css'
+    },
+    plugins: ["themes", "json_data", 'ui']
+  }).bind("loaded.jstree", function(event, data) {
+    return $(this).jstree("open_all");
+  }).bind("select_node.jstree", function(evt, data) {
+    return window.location = '/categories/' + data.rslt.obj.attr("id");
+  });
