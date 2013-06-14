@@ -27,7 +27,7 @@ class Article < ActiveRecord::Base
   def self.search(params)
     # tmp hack
     if params[:keywords] || params[:category_id] || params[:tag]
-      tire.search(load: true, per_page: 3, page: params[:page] || 1) do
+      tire.search(load: true, per_page: 5, page: params[:page] || 1) do
         query do
           boolean do
             must { string params[:keywords], default_operator: "AND" } if params[:keywords].present?
