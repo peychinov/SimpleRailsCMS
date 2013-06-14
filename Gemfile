@@ -15,6 +15,7 @@ group :development, :test do
   gem 'guard-coffeescript'
   gem 'guard-sass', :require => false
   gem 'rb-inotify', '~> 0.9'
+  gem 'rails-erd'
 end
 
 # Gems used only for assets and not required
