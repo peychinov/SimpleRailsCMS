@@ -1,16 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :set_locale, :set_is_in_editor # :load_root_categories
-
-  def track_last_public_url
-  	@last_public_url = request.url if request.format == 'text/html'
-  end
-
-  def set_is_in_editor
-    @is_in_editor = false
-  end
-
+  before_filter :set_locale # :load_root_categories
 
   private
 
