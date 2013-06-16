@@ -28,8 +28,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'acts_as_tree', '~> 0.2.0'
-gem 'acts_as_list'
 gem 'devise'
 gem 'heroku'
 gem "friendly_id", "~> 4.0.1"
