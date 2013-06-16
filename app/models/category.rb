@@ -3,16 +3,16 @@ class Category < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   attr_accessible :parent_id, :title
+  validates :title, :presence => true
+
   has_paper_trail
 
-  before_destroy :disassociate
+  belongs_to :parent_category, :class_name => "Category", :foreign_key => "parent_id"
 
   has_many :articles
   has_many :child_categories, :class_name => "Category", :foreign_key => "parent_id"
 
-  belongs_to :parent_category, :class_name => "Category", :foreign_key => "parent_id"
-
-  validates :title, :presence => true
+  before_destroy :disassociate
 
   default_scope :order => 'title ASC'
 
