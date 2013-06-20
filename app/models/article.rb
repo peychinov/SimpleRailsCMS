@@ -38,7 +38,7 @@ class Article < ActiveRecord::Base
         sort { by :title, 'desc' } if params[:keywords].blank?
       end
     else
-      tire.search(load: true, per_page: 3, page: params[:page] || 1) do
+      tire.search(load: true, per_page: 5, page: params[:page] || 1) do
         sort { by :title, 'desc' }
       end
     end
