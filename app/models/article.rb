@@ -39,7 +39,7 @@ class Article < ActiveRecord::Base
       end
     else
       tire.search(load: true, per_page: 5, page: params[:page] || 1) do
-        sort { by :title, 'desc' }
+        sort { by :created_at, 'desc' }
       end
     end
   end
