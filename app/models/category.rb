@@ -20,6 +20,16 @@ class Category < ActiveRecord::Base
     "#{title} (#{articles.count})"
   end
 
+  def articles_count
+    articles_count = articles.count
+
+    child_categories.each do |child|
+      articles_count << child.articles_count
+    end
+
+    articles_count
+  end
+
   def self.children_json(parent_id = nil, categories_ids = nil)
     categories_json = []
 
