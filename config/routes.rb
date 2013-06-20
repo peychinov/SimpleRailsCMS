@@ -31,9 +31,9 @@ SimpleRailsCMS::Application.routes.draw do
     get 'tags/:tag', to: 'articles#index', as: :tag
   end
 
-  root :to => 'categories#index'
+  root :to => 'articles#index'
 
-  match '/homepage' => redirect('/categories')
+  match '/homepage' => redirect('/articles')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
