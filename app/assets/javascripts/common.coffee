@@ -11,7 +11,6 @@ $ ->
   search_results = window.location.href.indexOf("articles/search") > -1
 
   unless search_results
-    alert 'from common.coffee'
     bg = window.location.href.indexOf("/bg/") > -1
     locale = if bg then '/bg' else '/en'
 

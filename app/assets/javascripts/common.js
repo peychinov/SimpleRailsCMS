@@ -11,7 +11,6 @@
     Tipped.create('.tipped');
     search_results = window.location.href.indexOf("articles/search") > -1;
     if (!search_results) {
-      alert('from common.coffee');
       bg = window.location.href.indexOf("/bg/") > -1;
       locale = bg ? '/bg' : '/en';
       $("#admin_categories_jstree").jstree({
