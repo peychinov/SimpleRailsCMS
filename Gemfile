@@ -43,6 +43,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
+gem 'sanitize'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
