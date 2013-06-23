@@ -17,6 +17,8 @@ en:
   posted_in: 'Posted in'
   read_more: 'Read more'
   administration: 'Administration'
+  any_tag: 'Any tag'
+  any_category: 'Any category'
   undid:
     create: 'Undid create.'
     update: 'Undid update.'
