@@ -3,11 +3,9 @@ class CategoriesController < PublicController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
-
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @categories }
+      format.html { @categories = Category.all }
+      format.json { render json: Category.children_json(params[:id]) }
     end
   end
 
