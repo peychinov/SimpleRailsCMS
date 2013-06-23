@@ -1,4 +1,6 @@
-= form_tag search_articles_path, method: :get do
+- search_path = @is_in_editor ? search_admin_articles_path : search_articles_path
+
+= form_tag search_path, method: :get do
   .field
     = label_tag :keywords, t('keywords')
     = text_field_tag :keywords, params[:keywords]

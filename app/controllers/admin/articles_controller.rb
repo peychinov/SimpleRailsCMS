@@ -11,6 +11,16 @@ class Admin::ArticlesController < Admin::AdminController
     end
   end
 
+  def search
+    @articles = Article.search(params.merge({ per_page: 1000 }))
+    categories = Category.for_articles(@articles)
+    @categories_json = Category.children_json(params[:id], categories.map(&:id)).to_json
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /articles/new
   # GET /articles/new.json
   def new

@@ -25,9 +25,10 @@ class Article < ActiveRecord::Base
   end
 
   def self.search(params)
+    per_page = params[:per_page] || 5
     # tmp hack
     if params[:keywords].present? || params[:category_id].present? || params[:tag].present?
-      tire.search(load: true, per_page: 5, page: params[:page] || 1) do
+      tire.search(load: true, per_page: per_page, page: params[:page] || 1) do
         query do
           boolean do
             must { string params[:keywords], default_operator: "AND" } if params[:keywords].present?
@@ -38,7 +39,7 @@ class Article < ActiveRecord::Base
         sort { by :title, 'desc' } if params[:keywords].blank?
       end
     else
-      tire.search(load: true, per_page: 5, page: params[:page] || 1) do
+      tire.search(load: true, per_page: per_page, page: params[:page] || 1) do
         sort { by :created_at, 'desc' }
       end
     end

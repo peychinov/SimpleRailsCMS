@@ -17,7 +17,13 @@ SimpleRailsCMS::Application.routes.draw do
     end
 
     namespace :admin do
-      resources :articles, :admins
+      resources :admins
+
+      resources :articles do
+        collection do
+          get 'search'
+        end
+      end
 
       resources :categories do
         collection do
