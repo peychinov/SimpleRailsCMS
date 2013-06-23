@@ -3,7 +3,8 @@
 
 en:
   actions: 'Actions'
-  articles_in_this_category: 'Articles in this category:'
+  articles_in_this_category: 'articles in this category:'
+  just_one_article_in_this_category: 'Only one article in this category:'
   no_articles_in_this_category: 'There are no articles in this category yet.'
   sure: 'Are you sure?'
   none: 'None'

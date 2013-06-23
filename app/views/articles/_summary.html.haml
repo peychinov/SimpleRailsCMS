@@ -13,6 +13,4 @@
     = link_to t('read_more') + ' →', article
 
   .posted_in
-    = render partial: '/articles/in_category', locals: { article: article }
-    |
-    = render partial: '/articles/tags', locals: { article: article }
+    = render partial: '/articles/footer', locals: { article: article }

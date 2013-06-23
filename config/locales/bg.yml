@@ -1,7 +1,8 @@
 bg:
   in: 'в'
   actions: 'Действия'
-  articles_in_this_category: 'Това са всички статии в тази категория:'
+  articles_in_this_category: 'статии в тази категория:'
+  just_one_article_in_this_category: 'Има само една статия в тази категория:'
   no_articles_in_this_category: 'Все още няма статии в тази категория.'
   sure: 'Сигурни ли сте?'
   none: 'Няма'

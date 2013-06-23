@@ -1,0 +1,6 @@
+%h2= article.title
+
+.article_content
+  = raw(article.content)
+
+= render partial: '/articles/footer', locals: { article: article }
