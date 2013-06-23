@@ -26,13 +26,15 @@ class Article < ActiveRecord::Base
 
   def self.search(params)
     per_page = params[:per_page] || 5
+    related_categories = Category.find(params[:category_id]).with_children if params[:category_id].present?
+
     # tmp hack
     if params[:keywords].present? || params[:category_id].present? || params[:tag].present?
       tire.search(load: true, per_page: per_page, page: params[:page] || 1) do
         query do
           boolean do
             must { string params[:keywords], default_operator: "AND" } if params[:keywords].present?
-            must { term :category_id, params[:category_id] } if params[:category_id].present?
+            must { terms :category_id, related_categories.map(&:id) } if params[:category_id].present?
             must { term :tag_names, params[:tag] } if params[:tag].present?
           end
         end

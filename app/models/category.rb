@@ -24,7 +24,7 @@ class Category < ActiveRecord::Base
     articles_count = articles.count
 
     child_categories.each do |child|
-      articles_count << child.articles_count
+      articles_count += child.articles_count
     end
 
     articles_count
@@ -58,6 +58,17 @@ class Category < ActiveRecord::Base
     categories << Category.find(parent_id).parents if parent_id
 
     categories
+  end
+
+  def with_children
+    categories = []
+
+    categories << self
+    child_categories.each do |child_category|
+      categories << child_category.with_children
+    end
+
+    categories.flatten.uniq
   end
 
   def json_data(categories_ids = nil)

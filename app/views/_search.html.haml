@@ -9,6 +9,6 @@
     = select_tag("tag", options_for_select([[t('any_tag') , '' ]] + ActsAsTaggableOn::Tag.all.collect { |tag| ["#{tag.name} (#{tag.taggings.count})", tag.name] }, params[:tag]))
   .field
     = label_tag :category_id, Category.model_name.human(count: 1)
-    = select_tag("category_id", options_for_select([[t('any_category') , '' ]] + Category.all.collect {|c| [ "#{c.title} (#{c.articles.count})", c.id ] }, params[:category_id]))
+    = select_tag("category_id", options_for_select([[t('any_category') , '' ]] + Category.all.collect {|c| [ "#{c.title} (#{c.articles_count})", c.id ] }, params[:category_id]))
 
   = submit_tag t("search"), name: nil
