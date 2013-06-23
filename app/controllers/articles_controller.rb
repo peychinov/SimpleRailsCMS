@@ -12,9 +12,13 @@ class ArticlesController < PublicController
   end
 
   def search
-    @articles = Article.search(params)
-    categories = Category.for_articles(@articles)
+    # all search results
+    all_search_results = Article.search(params.merge({ per_page: 1000 }))
+    categories = Category.for_articles(all_search_results)
     @categories_json = Category.children_json(params[:id], categories.map(&:id)).to_json
+
+    # those are only the paginated search results
+    @articles = Article.search(params)
 
     respond_to do |format|
       format.html
