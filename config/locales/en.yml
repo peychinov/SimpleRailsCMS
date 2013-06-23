@@ -11,10 +11,12 @@ en:
   switch_to_site: "Switch to your website"
   logout: 'Logout'
   search: 'Search'
+  tags: 'Tags'
   tag_cloud: 'Tag cloud'
   posted_on: 'Posted on'
   posted_in: 'Posted in'
   read_more: 'Read more'
+  administration: 'Administration'
   undid:
     create: 'Undid create.'
     update: 'Undid update.'
