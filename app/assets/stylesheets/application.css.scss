@@ -154,19 +154,15 @@ a#site_bar_refinery_cms_logo:hover img {
 }
 
 .article_summary{
-  border-radius: 15px;
   padding: 1em;
-  background-color: #ddf;
-  margin-top: 2em;
 
-  .title{
-    font-weight: bolder;
-    font-size: 1.5em;
-    color: #888;
+  .cutted{
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 
-  .contents{
-    margin-top: 1em;
+  .posted_on, .posted_in {
+    color: grey;
   }
 }
 

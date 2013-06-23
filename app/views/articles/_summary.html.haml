@@ -1,12 +1,18 @@
 - article = summary
 
 .article_summary
-  %span.title= link_to article.title, article
+  %h3= link_to article.title, article
 
-  %span.pull-right
+  .posted_on
+    = t('posted_on')
+    = article.created_at.strftime("%d.%m.%Y")
+    = # by ... (in future editions =))
+
+  .cutted
+    = sanitize(article.content[0...500] + ' ...', :tags=>[])
+    = link_to t('read_more') + ' →', article
+
+  .posted_in
     = render partial: '/articles/in_category', locals: { article: article }
-  %br
-  %span.pull-right
+    |
     = render partial: '/articles/tags', locals: { article: article }
-
-  .contents= sanitize(article.content[0...500] + '...', :tags=>[])

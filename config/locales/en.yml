@@ -12,6 +12,9 @@ en:
   logout: 'Logout'
   search: 'Search'
   tag_cloud: 'Tag cloud'
+  posted_on: 'Posted on'
+  posted_in: 'Posted in'
+  read_more: 'Read more'
   undid:
     create: 'Undid create.'
     update: 'Undid update.'

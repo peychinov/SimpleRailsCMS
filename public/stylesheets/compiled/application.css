@@ -137,16 +137,12 @@ a#site_bar_refinery_cms_logo:hover img {
       background-color: #cae7fb; }
 
 .article_summary {
-  border-radius: 15px;
-  padding: 1em;
-  background-color: #ddf;
-  margin-top: 2em; }
-  .article_summary .title {
-    font-weight: bolder;
-    font-size: 1.5em;
-    color: #888; }
-  .article_summary .contents {
-    margin-top: 1em; }
+  padding: 1em; }
+  .article_summary .cutted {
+    margin-top: 1em;
+    margin-bottom: 1em; }
+  .article_summary .posted_on, .article_summary .posted_in {
+    color: grey; }
 
 .article_content {
   margin: 2em;
