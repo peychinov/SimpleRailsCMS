@@ -1,9 +1,7 @@
 class Admin::ArticlesController < Admin::AdminController
   
-  # GET /articles
-  # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.search(params.merge({ per_page: 1000 }))
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,8 +19,6 @@ class Admin::ArticlesController < Admin::AdminController
     end
   end
 
-  # GET /articles/new
-  # GET /articles/new.json
   def new
     @article = Article.new
 
