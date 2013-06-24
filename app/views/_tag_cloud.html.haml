@@ -2,4 +2,5 @@
 
 #tag_cloud
   - tag_cloud Article.tag_counts, %w[css1 css2 css3 css4 css5] do |tag, css_class|
-    = link_to tag.name, tag_path(tag.name), class: css_class
+    - target_path = @is_in_editor ? admin_tag_path(tag.name) : tag_path(tag.name)
+    = link_to tag.name, target_path, class: css_class
