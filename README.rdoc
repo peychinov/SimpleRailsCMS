@@ -1,1 +1,1 @@
-Demo page: http://simple-rails-cms.herokuapp.com/
+Demo page: http://simple-rails-cms.herokuapp.com
